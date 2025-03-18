@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Meddon&display=swap');
+
+/* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/nature/nat-11/nat1034.ani), url(https://cur.cursors-4u.net/nature/nat-11/nat1034.gif), auto !important;} /* End https://www.cursors-4u.com */
+
+:root{
+    --color:/*rgb(198, 202, 179);*/ rgb(91, 104, 73);
+    --bg:/*rgb(255, 255, 248)*/black;
+}
+
+::-webkit-scrollbar{
+    display:none;
+}
+
+::selection{
+    background:var(--color);
+    color:var(--bg);
+}
+
+::-moz-selection{
+    background:var(--color);
+    color:var(--bg);
+}
+
+body{
+    margin:0;
+    font-family:Courier;
+    color:var(--color);
+    scrollbar-width: 0;
+    background:var(--bg);
+    overflow:hidden;
+;}
+
+h1,h2,h3,h4,h5,h6,p,sub,sup,a{
+    margin:0;
+}
+
+h1{
+    font-size:2.5rem;
+}
+
+h1::after{
+    content:" *"
+}
+
+p{
+    text-indent:2rem;
+}
+
+a{
+    color:inherit;
+}
+
+.subtext{
+    opacity:0.6;
+    font-size:0.75rem;
+}
+
+a:hover{
+    animation: a 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    letter-spacing:1.5px;
+    font-weight:bold;
+}
+
+@keyframes a{
+    0%{
+        letter-spacing:0;
+        font-size:1rem;
+        font-weight:normal;
+    }
+
+    100%{
+        letter-spacing:auto;
+        font-weight:auto;
+    }
+}
+
+.decor{
+    position:absolute;
+    bottom:0;
+    right:0;
+    margin:0.5rem;
+    text-align:right;
+}
+
+.topbar, .topbar2{
+    width:-webkit-fill-available;
+    width:-moz-available;
+    padding:3px;
+    border-bottom:1px solid;
+    display: grid;
+    place-content: space-between;
+    gap:3px;
+    grid-auto-flow: column;
+    font-size:0.75rem;
+}
+
+.topbar{
+    position:fixed;
+}
+
+header{
+    font-size:5rem;
+    font-weight:bold;
+    width:45%;
+    text-align:left;
+    color:var(--bg);
+    text-shadow:1px 1px var(--color), 1px -1px var(--color), -1px 1px var(--color), -1px -1px var(--color);
+    /*border-radius:0px 20px 0px 0px;*/
+    margin-bottom:-1rem;
+}
+
+main{
+    width:55%;
+    display:flex;
+    flex-direction:column;
+}
+
+.main{
+    display:flex;
+    flex-grow:1;
+    text-align:left;
+}
+
+aside{
+    min-width:25%;
+    max-width:25%;
+    padding:0.5rem;
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+
+aside h2{
+    background:var(--color);
+    color:var(--bg);
+    padding:3px;
+}
+
+aside h3::before{
+    content:"["
+}
+
+aside h3::after{
+    content:"]"
+}
+
+.icon{
+    background:url('https://vignette.wikia.nocookie.net/characterprofile/images/9/9e/Terriermon.png/revision/latest?cb=20160126020529');
+    background-size:100% 100%;
+    width:-webkit-fill-available;
+    width:-moz-available;
+    aspect-ratio:1/1;
+}
+
+article{
+    padding:0.5rem;
+    height:calc(100vh - 6rem);
+    flex:1;
+    overflow-y:scroll;
+}
+
+section{
+    border-bottom:1px dashed;
+    padding-bottom:0.25rem;
+}
+
+section:last-child{
+    border:none;
+}
+
+figure{
+    margin:0;
+    margin-left:3px;
+}
+
+figure, .featured{
+    background:var(--bg);
+    border:1px dashed var(--color);
+    aspect-ratio: 1/1;
+}
+
+figure span{
+    border:1px solid;
+    margin:-1px;
+    padding-left:1px;
+    padding-right:1px;
+}
+
+.featured{
+    float:right;
+    object-fit:cover;
+    width:13rem;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap:3px;
+}
+
+/*mobile*/
+@media screen and (max-width:1000px){
+    main{
+        width:-webkit-fill-available;
+        width:-moz-available;
+    }
+}
+
+@media screen and (max-width:500px){
+    aside{
+        display:none;
+    }
+
+    .decor{
+        display:none;
+    }
+}
+
+/*external shyt*/
+.nekolink{
+    aspect-ratio:1/1;
+    border:1px dashed;
+    width:-moz-available;
+    width:-webkit-fill-available;
+}
